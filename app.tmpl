@@ -1,0 +1,68 @@
+"use strict";
+
+var @@appname = require("./lib/class");
+
+module.exports = {
+	EVENT: @@appname.EVENT,
+	root: {
+		base: @@appname.base.private,
+		check: @@appname.check,
+		init: @@appname.init
+	},
+	"": {
+		api: @@appname.API,
+		object: {
+			expire: @@appname.base.expire,
+			getPower: @@appname.getPower,
+			get: @@appname.get,
+			getIds: @@appname.getIds,
+			fill: @@appname.fill
+		}
+	}
+}-----------------------------------------------------------{
+	"main": "index.js",
+	"version": 1,
+	"roots": ["@@rootapp"],
+	"struct": {},
+	"types": {},
+	"test": ["test/index.js"],
+	"EVENT": {
+		"trigger": {},
+		"on": {}
+	}
+}-----------------------------------------------------------"use strict";
+require("test").setup();
+
+describe("@@appname", function() {
+
+	before(function() {});
+
+	after(function() {});
+});-----------------------------------------------------------"use strict";
+
+var fib = require("fib");
+var dbapi = require("modules/dbapi");
+var trigger = require("trigger")();
+var apploader = require("apploader");
+var base = exports.base = require("apps/base");
+
+exports.getPower = function(id, type, userid) {
+	userid = userid || fib.userid();
+	switch (type) {};
+};
+
+exports.check = function(e) {};
+
+exports.init = function(id, e) {
+	return true;
+};
+
+exports.get = function(id, type) {};
+
+exports.getIds = function(id, type, d) {};
+
+exports.fill = function(id, type, d, ds) {};
+
+exports.EVENT = {};
+
+exports.API = {};
